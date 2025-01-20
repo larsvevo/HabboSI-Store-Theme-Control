@@ -63,8 +63,8 @@ Route::middleware('web')->group(function () {
 
 
     Route::name('users.')->prefix('users')->group(function () {
-        Route::get('me', HomeController::class)
+        Route::get('me', ShopController::class)
             ->middleware(Authenticate::using('sanctum'), 'voting.check')
-            ->name('me');
+            ->name('index');
     });
 });
