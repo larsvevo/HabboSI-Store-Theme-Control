@@ -60,11 +60,4 @@ Route::middleware('web')->group(function () {
             ->middleware(Authenticate::using('sanctum'))
             ->name('cancelled-transaction');
     });
-
-
-    Route::name('users.')->prefix('users')->group(function () {
-        Route::get('me', HomeController::class)
-            ->middleware(Authenticate::using('sanctum'), 'voting.check')
-            ->name('me');
-    });
 });
